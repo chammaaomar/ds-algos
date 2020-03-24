@@ -54,7 +54,21 @@ int array_get(array *arr, unsigned int index)
 {
     if (!arr->len)
         return 0;
-    return (arr->_data)[index > arr->len ? arr->len - 1 : index];
+    return (arr->_data)[index > arr->len - 1 ? arr->len - 1 : index];
+}
+
+array *array_slice(array *arr, int start, int end)
+{
+    start = start < 0 ? arr->len + start : start;
+    end = end < 0 ? arr->len + end : end;
+    if (end <= start)
+    {
+        // return an empty array
+        array *slice = array_cstor();
+        return slice;
+    }
+    array *slice = array_from(arr->_data + start, end - start);
+    return slice;
 }
 
 unsigned int array_len(array *arr)

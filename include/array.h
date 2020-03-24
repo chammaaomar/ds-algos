@@ -18,3 +18,5 @@ int array_pop(array *arr);
 unsigned int array_len(array *arr);
 
 int array_get(array *arr, unsigned int index);
+
+array *array_slice(array *arr, int start, int end);
