@@ -50,10 +50,11 @@ int array_pop(array *arr)
     return popped;
 }
 
-int array_get(array *arr, unsigned int index)
+int array_get(array *arr, int index)
 {
     if (!arr->len)
         return 0;
+    index = index < 0 ? arr->len + index : index;
     return (arr->_data)[index > arr->len - 1 ? arr->len - 1 : index];
 }
 
