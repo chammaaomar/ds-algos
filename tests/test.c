@@ -1,15 +1,4 @@
-#include "../munit/munit.h"
-#include "../include/array.h"
-#include <stdio.h>
-typedef struct
-{
-    int *arr;
-    int len;
-    // arrays I will dynamically assign and will have to free
-    array *arr1;
-    array *arr2;
-    array *arr3;
-} test_data;
+#include "../include/test.h"
 
 static void *
 setup_test_data(const MunitParameter params[], void *user_data)
@@ -187,9 +176,8 @@ static const MunitSuite suite = {
     NULL,
     1000,
     MUNIT_SUITE_OPTION_NONE};
+
 int main(int argc, const char *argv[])
 {
-    puts("Trying...");
-    int x = munit_rand_int_range(0, 0);
     return munit_suite_main(&suite, NULL, 0, NULL);
 }
