@@ -55,7 +55,7 @@ int array_get(array *arr, int index)
     if (!arr->len)
         return 0;
     index = index < 0 ? arr->len + index : index;
-    return (arr->_data)[index > arr->len - 1 ? arr->len - 1 : index];
+    return (arr->_data)[index];
 }
 
 array *array_slice(array *arr, int start, int end)
