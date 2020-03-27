@@ -1,4 +1,4 @@
-#ds-algos
+# ds-algos
 
 *********
 
@@ -10,5 +10,8 @@ Currently implemented:
 *********
 
 ## Dependencies:
+
+*********
+
 * [munit](https://github.com/nemequ/munit) for unit testing; simply clone into root dir
 * GNU Make for building the testing suite and running it.
